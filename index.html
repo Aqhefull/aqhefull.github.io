@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.4.9/css-doodle.min.js"></script>
+</head>
+<body>
+  <div class="main-wrapper">
+      <css-doodle>
+        :doodle {
+        @grid: 5 / 65vmin;
+        background: #fff;
+        padding: 2vmin;
+        box-shadow: 0 .5em .5em rgba(125, 125, 125, .5);
+        }
+      
+        background: @p(#ffecbaaa, #ff8d68aa, #a10054aa, #001f52aa);
+        transform: scale(.5) translate(-50%, -50%);
+        margin: 2vmin;
+      
+        box-shadow:
+        4.2vmin 4.2vmin 0 8vmin
+        @pd(#bff4edaa, #280f34aa, #b30753aa, #f6c667aa);
+      
+        :after, :before {
+        content: '';
+        position: absolute;
+        @size: 100%;
+        transform-origin: 0 0;
+        }
+        :after {
+        background: @p(#bff4ed, #280f34, #b30753, #f6c667);
+        transform: translateX(100%) skewY(45deg);
+        }
+        :before {
+        background: @p(#ffecba, #ff8d68, #a10054, #001f52);
+        transform: translateY(100%) skewX(45deg);
+        }
+      </css-doodle>
+  </div>
+
+  <script type="text/javascript">
+    document.addEventListener('click', function (e) {
+        e.target.update && e.target.update();
+      })
+  </script>
+</body>
+</html>
